@@ -63,14 +63,7 @@ function App() {
           <object className="menu-icon" type="image/svg+xml" data={Trending}>
             trending
           </object>
-          <button
-            onClick={() => {
-              navigate("/mmr");
-            }}
-            className="menu-btn"
-          >
-            буст ммр
-          </button>
+          <button className="menu-btn">буст ммр</button>
         </div>
         <div className="wrapper-menu-btn">
           <object className="menu-icon" type="image/svg+xml" data={Group}>
