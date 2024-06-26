@@ -4,8 +4,8 @@ import { useState } from "react";
 import { getAvatarPath } from "./util/Avatar";
 
 function App() {
-  const user = window.Telegram.WebApp.initDataUnsafe.user;
   const [avatarPath, setAvatarPath] = useState("");
+  const user = window.Telegram.WebApp.initDataUnsafe.user;
   getAvatarPath(setAvatarPath, user.id);
   const navigate = useNavigate();
 
