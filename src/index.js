@@ -9,7 +9,11 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 
 function validateInitDataUnsafe() {
   if (!window.Telegram.WebApp.initDataUnsafe.hasOwnProperty("user")) {
-    return <div>только в telegram</div>;
+    return (
+      <div>
+        только в telegram
+      </div>
+    );
   } else {
     const router = createBrowserRouter([
       {

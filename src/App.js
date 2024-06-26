@@ -11,11 +11,16 @@ import Wallet from "./resources/wallet.svg";
 
 function App() {
   const [avatarPath, setAvatarPath] = useState("");
+  const [loading, setLoading] = useState(true);
   const user = window.Telegram.WebApp.initDataUnsafe.user;
   getAvatarPath(setAvatarPath, user.id);
   const navigate = useNavigate();
 
-  if (avatarPath === "") {
+  setTimeout(() => {
+    setLoading(false);
+  }, 2000);
+
+  if (loading) {
     return (
       <div
         style={{
