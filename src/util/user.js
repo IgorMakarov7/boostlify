@@ -1,4 +1,4 @@
-export async function getUserPhotoFilePath(callback) {
+export async function getUserPhotoFilePath(id, callback) {
   const file_id = await fetch(
     "https://api.telegram.org/bot6498389353:AAErk3KqUxzPJPxwUBrv73b6MoDwbK0CEtQ/getUserProfilePhotos",
     {
@@ -6,7 +6,7 @@ export async function getUserPhotoFilePath(callback) {
       headers: {
         "Content-Type": "application/json",
       },
-      body: JSON.stringify({ user_id: 1142016175, limit: "1" }),
+      body: JSON.stringify({ user_id: id, limit: "1" }),
     }
   )
     .then((response) => response.json())

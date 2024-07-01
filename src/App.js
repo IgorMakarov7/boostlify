@@ -8,7 +8,7 @@ function App() {
   const [userPhoto, setUserPhoto] = useState("");
 
   const user = window.Telegram.WebApp.initDataUnsafe.user;
-  getUserPhotoFilePath(setUserPhoto);
+  getUserPhotoFilePath(user.id, setUserPhoto);
 
   return (
     <>
