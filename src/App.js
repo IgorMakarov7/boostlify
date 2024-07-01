@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { getUserPhotoFilePath } from "./util/user";
-import { ColorRing } from "react-loader-spinner";
+import { FallingLines } from "react-loader-spinner";
 import "./App.css";
 
 function App() {
@@ -12,8 +12,16 @@ function App() {
 
   return (
     <>
-      <div style={{ display: isLoading ? "block" : "none" }}>
-        <ColorRing colors={["#000000"]} />
+      <div
+        className="loader-wrapper"
+        style={{ display: isLoading ? "block" : "none" }}
+      >
+        <FallingLines
+          color="#4fa94d"
+          width="100"
+          visible={true}
+          ariaLabel="falling-circles-loading"
+        />
       </div>
       <div style={{ display: isLoading ? "none" : "block" }} className="App">
         <div className="header">
