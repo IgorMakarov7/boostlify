@@ -7,9 +7,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [userPhoto, setUserPhoto] = useState("");
 
-  window.Telegram.WebApp.setHeaderColor("section_bg_color");
   const user = window.Telegram.WebApp.initDataUnsafe.user;
-
   getUserPhotoFilePath(setUserPhoto);
 
   return (
