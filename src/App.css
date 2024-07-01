@@ -13,7 +13,7 @@
 body,
 html {
   height: 100%;
-  background: var(--tg-theme-bg-color);
+  background: var(--tg-theme-section-bg-color);
 }
 
 .loader-wrapper {
@@ -63,7 +63,7 @@ html {
 }
 
 .header-underline {
-  background: var(--tg-theme-section-bg-color);
+  background: var(--tg-theme-secondary-bg-color);
   height: 12px;
   width: 100%;
   border: none;
