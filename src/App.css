@@ -61,11 +61,3 @@ html {
   line-height: 16px;
   margin-bottom: 20px;
 }
-
-.header-underline {
-  background: var(--tg-theme-secondary-bg-color);
-  height: 12px;
-  width: 100%;
-  border: none;
-  box-shadow: none;
-}

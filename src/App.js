@@ -37,7 +37,6 @@ function App() {
             <h1 className="username">{user.first_name}</h1>
             <p className="username-hint">ваше имя и фото из telegram</p>
           </div>
-          <hr className="header-underline" />
         </div>
       </div>
     </>
