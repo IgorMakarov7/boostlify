@@ -13,7 +13,7 @@
 body,
 html {
   height: 100%;
-  background: var(--tg-theme-header-bg-color);
+  background: var(--tg-theme-secondary-bg-color);
 }
 
 .loader-wrapper {
@@ -27,7 +27,7 @@ html {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 20px;
+  padding-top: 6px;
 }
 
 .photo {
