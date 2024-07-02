@@ -8,15 +8,20 @@ ReactDOM.createRoot(document.getElementById("root")).render(
 );
 
 function validateInitDataUnsafe() {
-  if (window.Telegram.WebApp.initDataUnsafe.hasOwnProperty("user")) {
-    const router = createBrowserRouter([
-      {
-        path: "/",
-        element: <App />,
-      },
-    ]);
-    return <RouterProvider router={router} />;
-  } else {
+  if (!window.Telegram.WebApp.initDataUnsafe.hasOwnProperty("user")) {
     return <div>только в telegram</div>;
   }
+
+  // if (initData validate)
+  // ) {
+    // return <div>данные telegram не прошли проверку</div>;
+  // }
+
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <App />,
+    },
+  ]);
+  return <RouterProvider router={router} />;
 }
