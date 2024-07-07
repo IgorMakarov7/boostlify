@@ -1,14 +1,10 @@
 import { useState } from "react";
-import { getUserPhotoFilePath } from "./util/user";
 import { FallingLines } from "react-loader-spinner";
 import "./App.css";
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
-  const [userPhoto, setUserPhoto] = useState("");
-
   const user = window.Telegram.WebApp.initDataUnsafe.user;
-  getUserPhotoFilePath(user.id, setUserPhoto);
 
   return (
     <>
@@ -28,7 +24,7 @@ function App() {
           <div className="wrapper-photo">
             <img
               className="photo"
-              src={userPhoto}
+              src={getUserPhoto(user.id)}
               alt="profile"
               onLoad={() => setIsLoading(false)}
             />
@@ -41,5 +37,18 @@ function App() {
       </div>
     </>
   );
+}
+
+async function getUserPhoto(userId) {
+  return await fetch("https://boostlify-backend.onrender.com/api/telegram/userPhoto", {
+    method: "POST",
+    headers: {
+      accept: "application/json",
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ id: userId }),
+  }).then((response) => {
+    return response;
+  });
 }
 export default App;
