@@ -3,20 +3,37 @@ import ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import App from "./App";
 
-ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>{validateInitDataUnsafe()}</React.StrictMode>
-);
+const root = ReactDOM.createRoot(document.getElementById("root"));
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <App />,
+  },
+]);
 
-function validateInitDataUnsafe() {
-  if (!window.Telegram.WebApp.initDataUnsafe.hasOwnProperty("user")) {
-    return <div>только в telegram</div>;
-  }
+root.render(<RouterProvider router={router} />);
 
-  const router = createBrowserRouter([
-    {
-      path: "/",
-      element: <App />,
-    },
-  ]);
-  return <RouterProvider router={router} />;
-}
+//
+//
+//
+//
+// if (!window.Telegram.WebApp.initDataUnsafe.hasOwnProperty("user")) {
+//   root.render(<div>доступно только в telegram</div>);
+// } else if (!isInitDataValid) {
+//   root.render(<div>ваши данные не прошли проверку</div>);
+// } else {
+//   root.render();
+// }
+
+// async function isInitDataValid() {
+//   return await fetch("http://localhost:3030/api/telegram/validate", {
+//     method: "POST",
+//     headers: {
+//       accept: "application/json",
+//       "Content-Type": "application/json",
+//     },
+//     body: JSON.stringify({ initData: window.Telegram.WebApp.initData }),
+//   }).then((response) => {
+//     return response.status === 200;
+//   });
+// }
