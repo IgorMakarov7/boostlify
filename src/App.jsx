@@ -25,6 +25,7 @@ const App = () => {
   if (isLoading) {
     return <Loader />;
   }
+
   if (initDataStatus === "invalid") {
     return <div>ваши данные не прошли проверку</div>;
   }
